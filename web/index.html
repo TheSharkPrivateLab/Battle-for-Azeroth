@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Battle for Azeroth</title>
+    <script src="ressources/js/script.js"></script>
+    <script src="ressources/js/canvas.js"></script>
+    <link href="ressources/img/favicon.png" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="ressources/css/base.css" rel="stylesheet" />
+    <link href="ressources/bootstrap-social-gh-pages/bootstrap-social.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/a5b4581de3.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#ok-start-menu").click(function () {
+                $("#ok-start-menu").remove();
+                $("body").html($("body").html() +
+                    "<p>Quel est votre nom de héros ?</p><input id=\"name-start-menu\"></input> <button id=\"leave-start-menu\">Valider</button>");
+            });
+
+            $("body").on('click', "#leave-start-menu", function () {
+                if ($("#name-start-menu").val()) {
+                    ping();
+                    var player = new Player($("#name-start-menu").val());
+                    displayMainMenu();
+                }
+            });
+
+            setInterval(function () {
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <h1 class="text-center">Battle for Azeroth</h1>
+    <p class="text-center">Après l'invasion dévastatrice de la Horde de Gul'dan, c'est le chaos. Les renégats de la Horde dirigés par Durotan ont établi un campement, mais malheureusement ils ne seront jamais en paix tant que l'armée de Gul'dan restera en Azeroth. Durotan s'est allié à Anduin Lothar, le commandant suprême de l'Alliance pour vaincre Gul'dan.
+
+"Les temps sont durs, mais il nous faut gagner cette guerre pour avoir la paix ! Je ne fais confiance qu'à peu de personnes et vous en faites partie. Je compte sur vous pour recruter de bons soldats. Lok'tar ogar." Ces mots vous ont été adressés par Durotan lui-même et même Anduin Lothar semblait vous faire confiance. Un grand privilège pour vous et vous allez tous faire pour réussir au mieux cette mission.
+
+La mission est difficile, en effet, convaincre les gens de participer à une guerre qu'ils considèrent perdue n'est pas une mince affaire, mais vous avez été choisi, car votre charisme représente bien le monde que nous défendons. Mais ne vous attendez quand même pas à réussir à tous les coups.
+
+Vous allez donc vous rendre sur la place centrale du campement pour rallier les soldats à notre cause, mais aussi pour leur faire comprendre que c'est une question de vie ou de mort puisque c'est l'avenir d'Azroth qui en dépend.</p>
+<button id="ok-start-menu">J'ai compris</button>
+</body>
+</html>
